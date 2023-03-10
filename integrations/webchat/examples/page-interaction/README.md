@@ -4,11 +4,11 @@
 
 This code is for extending the Watson Assistant web chat. If you are new to developing with web chat, please start with the [web chat development overview](https://cloud.ibm.com/docs/watson-assistant?topic=watson-assistant-web-chat-develop). The code in this folder is commented with links and references to the web chat APIs used.
 
-This example will show you how to use a custom response to display a button within web chat that can locate fields in the host page and fill in values to them.
+This example demonstrates how to use a custom response to display a button within web chat that can locate fields in the host page and fill in values to them.
 
 It demonstrates:
 
-- How to use the [**pre:receive**](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-events#prereceive) event handler to add a custom response to message returned from the assistant so you can display a custom button.
+- How to use the [**receive**](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-events#receive) event handler trigger an immediate interaction with the page.
 - How to use a [**customResponse**](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-events#customresponse) event handler to display a custom button which, when clicked, will interact with elements on the host page.
 - How to use the [**ibm-web-chat--default-styles**](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-render#helper_classes) CSS helper class to make a custom button look like a default web chat button.
 
@@ -17,7 +17,8 @@ It demonstrates:
 ### Running the JavaScript Example
 
 1. Open the [client/javascript/index.html](client/javascript/index.html) file in a web browser.
-2. Open web chat and click the button.
+2. Open web chat and click the button to fill in the account number field.
+3. Send the message "fill phone number" to fill in the phone number field.
 
 ## Setting up your own assistant
 

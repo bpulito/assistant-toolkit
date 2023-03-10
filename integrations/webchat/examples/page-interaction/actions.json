@@ -4,11 +4,65 @@
   "valid": true,
   "status": "Available",
   "created": "2022-05-20T17:49:07.711Z",
-  "updated": "2022-05-20T17:50:16.168Z",
+  "updated": "2022-12-06T21:41:28.192Z",
   "language": "en",
   "skill_id": "dfaa72f9-b8df-4617-9396-c3d2ff1cd857",
   "workspace": {
     "actions": [
+      {
+        "steps": [
+          {
+            "step": "step_229",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "I have looked up your phone number but this time, I have filled it in for you without asking."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "user_defined": {
+                    "user_defined_type": "fill_phone_number"
+                  },
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_229"
+          }
+        ],
+        "title": "fill automatically",
+        "action": "action_23179",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_23179_intent_14329"
+        },
+        "variables": [
+          {
+            "title": "I have looked up your phone number but this time, I have filled ",
+            "variable": "step_229",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "fallback",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true
+        },
+        "disambiguation_opt_out": false
+      },
       {
         "steps": [
           {
@@ -285,6 +339,12 @@
                   ],
                   "response_type": "text",
                   "selection_policy": "sequential"
+                },
+                {
+                  "user_defined": {
+                    "user_defined_type": "fill_account_number"
+                  },
+                  "response_type": "user_defined"
                 }
               ]
             },
@@ -309,11 +369,19 @@
             "data_type": "any"
           }
         ],
-        "next_action": "fallback",
+        "next_action": "action_23179",
         "disambiguation_opt_out": true
       }
     ],
     "intents": [
+      {
+        "intent": "action_23179_intent_14329",
+        "examples": [
+          {
+            "text": "fill phone number"
+          }
+        ]
+      },
       {
         "intent": "fallback_connect_to_agent",
         "examples": [
